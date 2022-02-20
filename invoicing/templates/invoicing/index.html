@@ -1,0 +1,15 @@
+{%  extends "invoicing/layout.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+<body>
+<div class="container">
+    <br>
+<h4>Latest Invoices</h4>
+
+{% include "invoicing/invoices.html" %}
+
+<h4>Latest Reports</h4>
+{% include "reports/all_reports.html" %}
+</div>
+
+{% endblock %}

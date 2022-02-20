@@ -1,0 +1,19 @@
+{%  extends "invoicing/layout.html" %}
+{% block body %}
+
+<div class="container">
+    <table class="table">
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name  }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.address }}</td>
+            <td><a href="{% url 'customer_profile' customer.id %}">Profile</a></td>
+            <td><a href="{% url 'delete_customer' customer.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+   
+</div>
+    {% endblock %}

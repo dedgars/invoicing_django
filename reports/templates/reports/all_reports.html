@@ -1,0 +1,26 @@
+
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Number</th>
+            <th>Customer</th>
+            <th>Address</th>
+            <th>Boiler</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.id }}</td>
+            <td>{{ report.number  }}</td>
+            <td>{{ report.customer.name }}</td>
+            <td>{{ report.address }}</td>
+            <td>{{ report.boiler }}</td>
+            <td><a href="{% url 'reports:edit_report' report.id %}">Edit</a></td>
+            <td><a href="{% url 'reports:delete_report' report.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

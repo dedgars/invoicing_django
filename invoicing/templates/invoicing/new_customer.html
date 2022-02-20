@@ -1,0 +1,15 @@
+{%  extends "invoicing/layout.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+
+<div class="container">
+<form action="{% url 'new_customer' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Submit">
+</form>
+
+
+</div>
+{% endblock %}

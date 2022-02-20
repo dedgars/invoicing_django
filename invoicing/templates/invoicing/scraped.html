@@ -1,0 +1,31 @@
+{%  extends "invoicing/layout.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div class="container">
+
+<div class="container">
+    <form action="{% url 'new_customer' %}" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Submit">
+    </form>
+    <table class="table">
+        {% for customer in all_companies %}
+        <tr>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name  }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.address }}</td>
+            <td><a href="{% url 'customer_profile' customer.id %}">Profile</a></td>
+            <td><a href="{% url 'delete_customer' customer.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    
+
+   
+</div>
+    {% endblock %}
