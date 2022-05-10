@@ -8,7 +8,8 @@ class Report(models.Model):
     customer = models.ForeignKey("invoicing.Customer",
                                  on_delete=models.CASCADE,
                                  verbose_name="customer",
-                                 related_name="reports")
+                                 related_name="reports",
+                                 default=1)
     name = models.CharField(max_length=100, blank=True)
     address = models.CharField(max_length=200, blank=True)
     phone = models.CharField(max_length=40, blank=True)

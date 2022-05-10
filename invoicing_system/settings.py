@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'reports',
     'company',
     'crispy_forms',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,20 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'bw9dl0vnimlxsalnythr',
+#         'USER': 'u2lmom0tnmslg7pz',
+#         'PASSWORD': 'izNSxB4n3GIeqO7wJDuS',
+#         'HOST': 'bw9dl0vnimlxsalnythr-mysql.services.clever-cloud.com',
+#         'PORT': '3306',
+#     }
+# }
+
+
 
 
 # Password validation

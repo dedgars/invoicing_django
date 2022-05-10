@@ -1,0 +1,21 @@
+{% extends 'invoicing/layout.html'%}
+
+{% block body %}
+<div class="container">
+<h1>login</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    <div class="mb-3">
+      <input type="password" class="form-control" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+    
+
+
+</div>
+
+{% endblock %}

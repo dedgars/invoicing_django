@@ -26,7 +26,7 @@ class Invoice(models.Model):
     create_date = models.DateTimeField('date created')
     due_time = models.IntegerField(default=5)
 
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='invoices')
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='invoices', default=1)
     paid = models.BooleanField(default=False)
 
     from .pdf_gen import generate_pdf
@@ -58,7 +58,7 @@ class Line(models.Model):
     amount = models.FloatField(default=1)
     vat_included = models.BooleanField(default=False, )
     price = models.FloatField(default=0)
-    invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE, related_name='lines', default=0)
+    invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE, related_name='lines', default=1)
 
     def total(self):
         return self.amount * self.price
